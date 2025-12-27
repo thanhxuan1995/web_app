@@ -1,0 +1,328 @@
+/* ===== Global ===== */
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    background-color: #f5f7fa;
+}
+
+/* ===== Sidebar ===== */
+.sidebar {
+    width: 220px;
+    background-color: black;
+    color: white;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    transition: width 0.3s ease, padding 0.3s ease;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 15px 20px;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar ul li a:hover {
+    background-color: #00b4d8;
+    border-radius: 4px;
+}
+
+/* ===== Toggle Button ===== */
+.toggle-btn {
+    position:static;
+    top: 5px;
+    left: 5px; 
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 5px 10px;
+    border-radius: 4px 0 0 4px;
+    transition: 0.3s;
+}
+
+.toggle-btn:hover {
+    background-color: #00b4d8;
+}
+
+/* ===== Collapsed Sidebar ===== */
+.sidebar.collapsed {
+    width: 50px; /* partially visible for smooth collapse */
+    padding: 10px 0;
+}
+
+.sidebar.collapsed .menu {
+    display: none;
+}
+
+.sidebar.collapsed .toggle-btn {
+    right: -25px;           /* move closer to sidebar */
+    font-size: 18px;        /* smaller icon */
+    padding: 2px 6px;     /* smaller padding */
+    display: none;
+}
+
+/* Submenu */
+.submenu {
+    list-style: none;
+    padding-left: 15px;
+    display: none; /* hidden by default */
+}
+
+.submenu li a {
+    font-size: 0.80em;
+    color: #555;
+    padding: 4px 5px;
+}
+
+.submenu li a:hover {
+    color: #00b4d8;
+    font-weight: bold;
+}
+
+/* Submenu icons */
+.submenu li a .menu-icon {
+    width: 4px;                
+    height: 4px;               
+    fill: #ccc;                 
+    margin-right: 6px;          
+}
+
+/* ===== Main Content ===== */
+.main-content {
+    margin-left: 220px;
+    flex-grow: 1;
+    padding: 10px;
+    transition: margin-left 0.3s ease;
+}
+
+.sidebar.collapsed + .main-content {
+    margin-left: 50px; /* match collapsed width */
+}
+
+/* ===== Page Wrapper ===== */
+.page-wrapper {
+    margin-left: 220px;
+    flex-grow: 1;
+    padding: 0;
+    transition: margin-left 0.3s ease;
+}
+
+.sidebar.collapsed + .page-wrapper {
+    margin-left: 50px;
+}
+
+/* ===== Header ===== */
+.top-header {
+    background-image: url('https://images.unsplash.com/photo-1581091870638-40e9aa3f1c34?auto=format&fit=crop&w=1600&q=80');
+    background-size: cover;
+    background-position: center;
+    color: darkorange;
+    text-align: center;
+    padding: 8px;
+    border-bottom: 4px solid #00b4d8;
+}
+
+/* Dashboard fallback link */
+#main-content a {
+    color: #00b4d8;
+    font-weight: bold;
+    text-decoration: underline;
+}
+#main-content a:hover {
+    color: #0077a3;
+}
+
+/* Dynamic h2 styled like h1 */
+.dynamic-header {
+    background-image: url('https://images.unsplash.com/photo-1581091870638-40e9aa3f1c34?auto=format&fit=crop&w=1600&q=80');
+    background-size: cover;
+    background-position: left;
+    color: black;
+    text-align: left;
+    padding: 3px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    border-bottom: 1px solid #00b4d8;
+    margin-top: 20px;
+}
+
+.external-link-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 24px;
+    background-color: #00b4d8;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+}
+
+/* About us image container */
+.about-image-container {
+    display: flex;
+    justify-content: center;
+    margin-top: -30px;
+    margin-bottom: 80px;
+}
+
+/* About us image styling */
+.about-image {
+    max-width: 50%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+/* Embedded iframe styling */
+#main-content iframe {
+    display: block;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Icons in sidebar items */
+.menu a {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: white;
+}
+
+.menu-icon {
+    width: 18px;
+    height: 18px;
+    fill: white;
+    margin-right: 10px;
+}
+
+/* AI Tools Table Styling */
+.ai-tools-table-container {
+    margin-top: 20px;
+    overflow-x: auto;
+}
+
+.ai-tools-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.ai-tools-table thead {
+    background-color: #00b4d8;
+    color: white;
+}
+
+.ai-tools-table th, 
+.ai-tools-table td {
+    padding: 12px 16px;
+    text-align: left;
+}
+
+.ai-tools-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.ai-tools-table tbody tr:hover {
+    background-color: #e0f7fa;
+}
+
+.ai-tools-table tbody td a {
+    color: #0077a3;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.ai-tools-table tbody td a:hover {
+    text-decoration: underline;
+}
+
+/* Card Styling */
+.card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin-top: 20px;
+}
+
+/* File Input */
+input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin: 15px 0;
+    border: 2px dashed #00b4d8;
+    border-radius: 8px;
+    cursor: pointer;
+    background: #f0f8ff;
+}
+
+/* Buttons */
+button {
+    background-color: #00b4d8;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #0077a3;
+}
+
+/* Progress Bar */
+.progress-bar {
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 8px;
+    margin: 15px 0;
+    overflow: hidden;
+    height: 18px;
+}
+
+.progress {
+    width: 0%;
+    height: 100%;
+    background-color: #00b4d8;
+    transition: width 0.4s ease;
+}
+
+/* Download Button */
+.download-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 16px;
+    background-color: #2ecc71;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.download-btn:hover {
+    background-color: #27ae60;
+}
