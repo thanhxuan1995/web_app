@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>North Ops</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="https://skynet.db.amazon.com/javascripts/api/tableau.embedding.3.latest.min.js"></script>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar">
+        <button class="toggle-btn" onclick="toggleSidebar()"
+           style="top:10px; left:30px;">
+            ☰
+        </button>
+        <!-- Expand Sidebar Button (hidden by default) -->
+        <button id="expandSidebarBtn" onclick="toggleSidebar()" 
+                style="display:none; top:10px; left:10px;">
+            ▶
+        </button>
+        <ul class="menu">
+            <li>
+                <a href="#" onclick="loadPage('dashboard')">
+                    <svg class="menu-icon" viewBox="0 0 24 24"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8v-10h-8v10zm0-18v6h8V3h-8z"/></svg>
+                    Dashboard
+                </a>
+            </li>
+            <li>
+                <a href="#" onclick="toggleSubmenu('ai-projects-sub')">
+                    <svg class="menu-icon" viewBox="0 0 24 24"><path d="M12 2L2 7h20L12 2zm0 2.5L18.9 7H5.1L12 4.5zM4 9v13h16V9H4z"/></svg>
+                    AI Projects ▼
+                </a>
+                <ul id="ai-projects-sub" class="submenu">
+                    <li>
+                        <a href="#" onclick="loadPage('project1')">
+                            <svg class="menu-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/></svg>
+                            YQIS Tool
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" onclick="loadPage('project2')">
+                            <svg class="menu-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/></svg>
+                            Test Log Partition
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" onclick="loadPage('project3')">
+                            <svg class="menu-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/></svg>
+                            Project 3- Chineese Language Speaking Practice
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="#" onclick="loadPage('amazon-ai-tools')">
+                    <svg class="menu-icon" viewBox="0 0 24 24">
+                        <!-- Robot / AI style icon -->
+                        <path d="M12 2C10.9 2 10 2.9 10 4V5H7C5.9 5 5 5.9 5 7V17C5 18.1 5.9 19 7 19H17C18.1 19 19 18.1 19 17V7C19 5.9 18.1 5 17 5H14V4C14 2.9 13.1 2 12 2ZM12 4H12.01V5H12V4ZM12 14C11.45 14 11 14.45 11 15C11 15.55 11.45 16 12 16C12.55 16 13 15.55 13 15C13 14.45 12.55 14 12 14ZM8 9H16V11H8V9ZM8 12H16V14H8V12Z"/>
+                    </svg>
+                    Amazon AI Tools
+                </a>
+            </li>
+
+            <li>
+                <a href="#" onclick="loadPage('reports')">
+                    <svg class="menu-icon" viewBox="0 0 24 24"><path d="M3 3h18v2H3V3zm0 4h18v2H3V7zm0 4h12v2H3v-2zm0 4h12v2H3v-2zm0 4h18v2H3v-2z"/></svg>
+                    Reports
+                </a>
+            </li>
+            <li>
+                <a href="#" onclick="loadPage('settings')">
+                    <svg class="menu-icon" viewBox="0 0 24 24"><path d="M19.43 12.98l1.77-1.77-1.41-1.41-1.77 1.77a6.964 6.964 0 0 0-1.46-.85l-.27-2.01h-2v2.01c-.51.18-1.02.42-1.46.71l-1.77-1.77-1.41 1.41 1.77 1.77c-.28.44-.53.95-.71 1.46H4v2h2.01c.18.51.42 1.02.71 1.46l-1.77 1.77 1.41 1.41 1.77-1.77c.44.28.95.53 1.46.71V20h2v-2.01c.51-.18 1.02-.42 1.46-.71l1.77 1.77 1.41-1.41-1.77-1.77c.28-.44.53-.95.71-1.46H20v-2h-2.01c-.18-.51-.42-1.02-.71-1.46z"/></svg>
+                    Settings
+                </a>
+            </li>
+            <li>
+                <a href="#" onclick="loadPage('aboutus')">
+                    <svg class="menu-icon" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                    About us
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Page wrapper -->
+    <div class="page-wrapper">
+        <!-- Persistent top header -->
+        <header class="top-header">
+            <h1>Welcome to North Ops Database Management</h1>
+        </header>
+
+        <!-- Main content below header -->
+        <div id="main-content" class="main-content">
+            <p>Select an option from the sidebar to view content.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
