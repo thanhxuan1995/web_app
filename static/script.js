@@ -148,7 +148,7 @@ function loadPage(page) {
         <p>The Phone Tool page cannot be embedded due to login restrictions.</p>
         <a href="https://phonetool.amazon.com/users/gjianyin" target="_blank" class="external-link-btn">Open Phone Tool →</a>
         <div class="about-image-container">
-            <img src="../image_folder/Sally_org.png" alt="Sally's Organization" class="about-image">
+            <img src="/static/image_folder/Sally_org.png" alt="Sally's Organization" class="about-image">
         </div>
     `;
     }
